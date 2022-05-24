@@ -1,0 +1,351 @@
+{
+	"info": {
+		"_postman_id": "1efffc9b-749c-4e95-a25d-80488dd1ccc1",
+		"name": "week7 - heroku",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "取得所有貼文",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://lit-everglades-31132.herokuapp.com/posts?keyword=&timeSort=desc",
+					"protocol": "https",
+					"host": [
+						"lit-everglades-31132",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"posts"
+					],
+					"query": [
+						{
+							"key": "keyword",
+							"value": ""
+						},
+						{
+							"key": "timeSort",
+							"value": "desc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "刪除單筆貼文",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://lit-everglades-31132.herokuapp.com/posts/62865ceb7fee2fdce3995e4f",
+					"protocol": "https",
+					"host": [
+						"lit-everglades-31132",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"posts",
+						"62865ceb7fee2fdce3995e4f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "刪除所有貼文",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://lit-everglades-31132.herokuapp.com/posts",
+					"protocol": "https",
+					"host": [
+						"lit-everglades-31132",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "新增貼文",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"content\": \"\",\n    \"user\": \"6285a7e275c2d526931aa08e\",\n    \"image\": \"https://reurl.cc/OA43Yy\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://lit-everglades-31132.herokuapp.com/posts",
+					"protocol": "https",
+					"host": [
+						"lit-everglades-31132",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "編輯貼文",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"content\": \"aaaaaaa\",\n    \"user\": \"6285a7e275c2d526931aa08e\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://lit-everglades-31132.herokuapp.com/posts/6285aa524c338fd8e4d62931",
+					"protocol": "https",
+					"host": [
+						"lit-everglades-31132",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"posts",
+						"6285aa524c338fd8e4d62931"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "註冊",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"nn\",\n    \"email\": \"nn@gmail.com\",\n    \"confirmPassword\": \"nnnnnnnn\",\n    \"password\": \"nnnnnnnn\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://lit-everglades-31132.herokuapp.com/users/sign_up",
+					"protocol": "https",
+					"host": [
+						"lit-everglades-31132",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"users",
+						"sign_up"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "登入",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"nn@gmail.com\",\n    \"password\": \"nnnnnnnn\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://lit-everglades-31132.herokuapp.com/users/sign_in",
+					"protocol": "https",
+					"host": [
+						"lit-everglades-31132",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"users",
+						"sign_in"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "重設密碼",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyOGI5YTI3YWJlYTU4MjQ4NDZlZTc5ZCIsIm5hbWUiOiJoYWhhIiwiaWF0IjoxNjUzMzE2MTU5LCJleHAiOjE2NTU5OTQ1NTl9.oLhoo67BWg338OYcVpi3gKFkeBr3lWjosTYJyn2ljzQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"password\": \"zzzzzzzz\",\n    \"confirmPassword\": \"zzzzzzzz\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://lit-everglades-31132.herokuapp.com/users/updatePassword",
+					"protocol": "https",
+					"host": [
+						"lit-everglades-31132",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"users",
+						"updatePassword"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "取得個人資料",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyOGI5Y2ZhMDk3MzU2NTQxNzUyM2U1OSIsIm5hbWUiOiJubiIsImlhdCI6MTY1MzMxNjg2OCwiZXhwIjoxNjU1OTk1MjY4fQ.di996y-Z0aItpQvp-LfzZzWgBN9-jd6RnSZ35N5v0nQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://lit-everglades-31132.herokuapp.com/users/profile",
+					"protocol": "https",
+					"host": [
+						"lit-everglades-31132",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"users",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "修改個人資料",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyOGI5Y2ZhMDk3MzU2NTQxNzUyM2U1OSIsIm5hbWUiOiJubiIsImlhdCI6MTY1MzMxNjg2OCwiZXhwIjoxNjU1OTk1MjY4fQ.di996y-Z0aItpQvp-LfzZzWgBN9-jd6RnSZ35N5v0nQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"kk\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://lit-everglades-31132.herokuapp.com/users/editProfile/628b9cfa0973565417523e59",
+					"protocol": "https",
+					"host": [
+						"lit-everglades-31132",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"users",
+						"editProfile",
+						"628b9cfa0973565417523e59"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "上傳圖片",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyOGM0NmNjNTBmOGE2NDVlNmM2N2MyZiIsIm5hbWUiOiJ0dCIsImlhdCI6MTY1MzM2MDM1MywiZXhwIjoxNjU2MDM4NzUzfQ.3fFfjmWIgdcA5SggSXxMvZTKfUmeMqFzlnpDbeD91Bk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "yQ6emVm",
+							"type": "file",
+							"src": "/Users/emilyhsi/Desktop/下載.jpeg"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://lit-everglades-31132.herokuapp.com/upload",
+					"protocol": "https",
+					"host": [
+						"lit-everglades-31132",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"upload"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
